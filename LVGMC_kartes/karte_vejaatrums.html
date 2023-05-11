@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LVĢMC_vēja_ātrums</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet"></script>
+    <script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
+    <script>
+        L.simpleMapScreenshoter().addTo(map)
+    </script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .leaflet-container {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 0px;
+            text-align: center;
+        }
+
+        .marker div {
+            font-size: 1.00em;
+            font-weight: bold;
+            padding: 3px;
+            width: 55px;
+            height: 28px;
+            border-radius: 5px;
+            border-color: black;
+            text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff;
+            border-width: 1px;
+            border-style: solid;
+            text-align: center;
+        }
+
+        .legend {
+            background-color: rgba(255, 255, 255, 0.493);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .legend i {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+
+    <script>
+        var today = new Date();
+        var menesis = ('0' + (today.getMonth() + 1)).slice(-2)
+        var diena = ('0' + (today.getDate())).slice(-2)
+        var date = today.getFullYear() + '.' + menesis + '.' + diena;
+        var stundas = ('0' + (today.getHours())).slice(-2) + ':00';
+        if (today.getHours() === 0) {
+            var stundaminus = '23:00';
+            var vakardiena = today.getFullYear() + '.' + menesis + '.' + ('0' + (today.getDate() - 1)).slice(-2);
+            var datlaiksminus = vakardiena + " " + stundaminus;
+        }
+        else {
+            var stundaminus = ('0' + (today.getHours() - 1)).slice(-2) + ':00';
+            var datlaiksminus = date + " " + stundaminus;
+        }
+        var datlaiks = date + " " + stundas
+        console.log('tagad', datlaiks);
+        console.log('pirms', datlaiksminus);
+
+
+
+
+        L.mapbox.accessToken = 'pk.eyJ1IjoibWV0ZW9sYXR2aWEiLCJhIjoiY2xjcWF3ajRkMDQ0NDNucDE4aTdkZ3h2NSJ9.L0yigObs_66n45KR3oLfUQ';
+        var map = L.map('map').setView([56.85, 24.55], 7);
+
+        // Add tiles from the Mapbox Static Tiles API
+        // (https://docs.mapbox.com/api/maps/#static-tiles)
+        // Tiles are 512x512 pixels and are offset by 1 zoom level
+        L.tileLayer(
+            'https://api.mapbox.com/styles/v1/mapbox/dark-v11/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
+            tileSize: 512,
+            zoomOffset: -1,
+            attribution: '© <a href="https://www.mapbox.com/contribute/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        const baseballIcon = L.icon({
+            iconUrl: 'baseball-marker.png',
+            iconSize: [32, 37],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -28]
+        });
+
+
+        //izveidot geoJson
+
+
+        var myLayer = L.geoJSON().addTo(map);
+        var gj = {
+            "name": "MyFeatureType",
+            "type": "FeatureCollection",
+            "features": []
+        };
+        var myObj = {}
+        var koordjson = 'https://videscentrs.lvgmc.lv/data/weather_monitoring_points'
+        var weatherjson = 'https://videscentrs.lvgmc.lv/data/weather_monitoring_data_raw'
+        $.ajax({
+            type: "GET",
+            url: weatherjson,
+            traditional: true,
+            dataType: 'json',
+            success: function (response2) {
+                response2.forEach(function (tabledata2) {
+                    console.log(tabledata2.laiks)
+                    if (tabledata2.laiks === datlaiks) {
+                        myObj[tabledata2.stacijas_kods] = tabledata2.videja_veja_atrums
+                    }
+
+                    else if (tabledata2.laiks === datlaiksminus) {
+                        myObj[tabledata2.stacijas_kods] = tabledata2.videja_veja_atrums
+                    }
+
+                })
+            }
+        })
+        console.log(myObj)
+
+        function sazimet() {
+            $.ajax({
+                type: "GET",
+                url: koordjson,
+                traditional: true,
+                dataType: 'json',
+                success: function (response) {
+                    response.forEach(function (tabledata) {
+                        if (tabledata.kods in myObj && myObj[tabledata.kods] !== null) {
+                            var atslega = tabledata.kods
+                            //console.log(atslega)
+                            var temp = myObj[atslega]
+                            //console.log(temp)
+                            geojsonFeature = {
+                                "type": "Feature", "geometry": {
+                                    "type": "Point", "coordinates": [parseFloat(tabledata.lon),
+                                    parseFloat(tabledata.lat)]
+                                },
+                                "properties": { "kods": tabledata.kods, "temperatura": temp }
+                            }
+                            /*gj.features.push(geojsonFeature);
+                            var myLayer = L.geoJSON().addTo(map);
+                            myLayer.addData(geojsonFeature);
+                            myLayer.bindTooltip(temp, { permanent: true, direction: 'center', className: 'countryLabel' });*/
+
+
+                            value = temp;
+                            const numbers = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60];
+                            const colours = ['FFFFFF', '#b0ffff', '#19ffff', '#00afff', '#004cff', '#1000ff', '#6b00ff', '#be00ff', '#ff00fc', '#ff00b9', '#ff007e', '#ff0025', '#cf0000', '#670000', '#734848', '#989898', '#e4e4e4', '#e4e4e4', '#e4e4e4', '#e4e4e4', '#e4e4e4'];
+                            const index = numbers.findIndex(e => e > value)
+                            console.log(colours[index]);
+                            var content = `<div style="background:${colours[index]}">${temp} m/s</div>`;
+                            var myIcon = L.divIcon({ html: content, className: 'marker' });
+                            var marker = L.marker([parseFloat(tabledata.lat), parseFloat(tabledata.lon)], { icon: myIcon });
+                            marker.addTo(map);
+                        }
+                    })
+                }
+            })
+
+        }
+
+
+        setTimeout(sazimet, 1000);
+        console.log(gj)
+
+    </script>
+
+
+
+</body>
+
+</html>

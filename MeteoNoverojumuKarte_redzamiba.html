@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeteoLatvia</title>
+  <link rel="stylesheet" href="MeteoStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d13555ebbc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section class="sub-header-karte">
+    <nav>
+      <a href="MeteoHome.html"><img src="https://fv9-5.failiem.lv/down.php?i=c35dyk4ce&view"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">MĀJAS</a></li>
+          <li><a href="MeteoPar.html">PAR</a></li>
+          <li><a href="MeteoNoverojumuKarte_temperatura.html">KARTE</a></li>
+          <li><a href="MeteoSalidzinajums.html">SALĪDZINĀJUMI</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Novērojumu karte</h1>
+  </section>
+
+  
+
+  <section class="LVGMC_noverojumu_karte">
+    <h1>Redzamība</h1>
+    <ul>
+      <li><a href="MeteoNoverojumuKarte_temperatura.html">Gaisa Temeratūra</a></li>
+      <li><a href="MeteoNoverojumuKarte_vejavirziens.html">Vēja virziens</a></li>
+      <li><a href="MeteoNoverojumuKarte_vejaatrums.html">Vēja ātrums</a></li>
+      <li><a href="MeteoNoverojumuKarte_vejabrazmas.html">Vēja brāzmas</a></li>
+      <li><a href="MeteoNoverojumuKarte_relativaismitrums.html">Relatīvais mitrums</a></li>
+      <li><a href="MeteoNoverojumuKarte_atmosferasspiediens.html">Atmosfēras spiediens</a></li>
+      <li><a href="MeteoNoverojumuKarte_nokrisnudaudzums.html">Nokrišņu daudzums</a></li>
+      <li><a href="MeteoNoverojumuKarte_redzamiba.html">Redzamība</a></li>
+      <li><a href="MeteoNoverojumuKarte_sniegasegasbiezums.html">Sniega segas biezums</a></li>
+    </ul>
+    <embed type="text/html" src="LVGMC_kartes/karte_redzamiba.html" class="LVGMC_karte">
+  </section>
+
+
+
+  <section class="footer">
+    <h4>Par mani</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="icons">
+      <a href="https://twitter.com/MeteoLatvia">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="https://www.facebook.com/MetLatvia">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/meteo_latvia15/">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@meteolatvia">
+        <i class="fa fa-youtube"></i>
+      </a>
+    </div>
+    <p><i class="fa fa-copyright"></i>MeteoLatvia 2023 <br>V5</p>
+  </section>
+
+
+
+
+  <script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+
+  </script>
+
+</body>
+
+</html>
