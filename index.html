@@ -26,7 +26,7 @@
         }
         
         .teaser{
-            width: 50%;
+            width: 100%;
         }
     </style>
 </head>
@@ -34,9 +34,7 @@
 <body>
     <div id="main">
         <div class="fof">
-            <h1>Error</h1>
-            <p>Dienas, dienas, dienas...
-            <p>
+         
                 <img src="https://failiem.lv/down.php?i=w3r7um82g" class=teaser>
         </div>
     </div>
@@ -61,8 +59,8 @@
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 // Output the result in an element with id="demo"
-                document.getElementById("demo").innerHTML = days + " dienas <br>" + hours + " stundas <br>"
-                    + minutes + " minūtes <br>" + seconds + " sekundes <br>";
+                document.getElementById("demo").innerHTML = days + " dienas " + hours + " stundas "
+                    + minutes + " minūtes " + seconds + " sekundes ";
             }
                 , 1000);
         </script>
