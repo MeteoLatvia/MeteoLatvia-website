@@ -11,10 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d13555ebbc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <section class="sub-header-sateliti">
+  <section class="sub-header-radars">
     <nav>
       <a href="MeteoHome.html"><img src="https://fv9-5.failiem.lv/down.php?i=c35dyk4ce&view"></a>
       <div class="nav-links" id="navLinks">
@@ -37,21 +40,35 @@
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-    <h1>Satelītattēli</h1>
+    <h1>Meteoroloģiskais radars</h1>
+  </section>
+  <iframe 
+  width="100%" 
+  height="720" 
+  src="https://embed.windy.com/embed2.html?lat=56.819&lon=24.686&detailLat=56.786&detailLon=24.642&width=1280&height=720&zoom=7&level=surface&overlay=radar&product=radar&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1"
+  frameborder="0">
+</iframe>
+
+  <section>
+
   </section>
 
-  
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
 
-  <section class="LVGMC_noverojumu_karte">
-    <h1>HRV</h1>
-    <ul>
-      <li><a href="MeteoSatelits_HRV.html">HRV</a></li>
-      <li><a href="MeteoSatelits_NaturalColor.html">Natural color</a></li>
-      <li><a href="MeteoSatelits_IR10.8.html">IR10.8</a></li>
-      <li><a href="MeteoSatelits_Dust.html">Dust</a></li>
-      <li><a href="MeteoSatelits_FogCheck.html">Low clouds / fog</a></li>
-    </ul>
-    <embed type="text/html" src="EUMETSAT\EUMETSAT_HRV.html" class="LVGMC_karte">
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
   </section>
 
 

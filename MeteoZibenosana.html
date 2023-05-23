@@ -11,10 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d13555ebbc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <section class="sub-header-sateliti">
+  <section class="sub-header-negaisi">
     <nav>
       <a href="MeteoHome.html"><img src="https://fv9-5.failiem.lv/down.php?i=c35dyk4ce&view"></a>
       <div class="nav-links" id="navLinks">
@@ -37,22 +40,40 @@
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-    <h1>Satelītattēli</h1>
+    <h1>Zibens izlādes</h1>
   </section>
 
-  
-
-  <section class="LVGMC_noverojumu_karte">
-    <h1>HRV</h1>
-    <ul>
-      <li><a href="MeteoSatelits_HRV.html">HRV</a></li>
-      <li><a href="MeteoSatelits_NaturalColor.html">Natural color</a></li>
-      <li><a href="MeteoSatelits_IR10.8.html">IR10.8</a></li>
-      <li><a href="MeteoSatelits_Dust.html">Dust</a></li>
-      <li><a href="MeteoSatelits_FogCheck.html">Low clouds / fog</a></li>
-    </ul>
-    <embed type="text/html" src="EUMETSAT\EUMETSAT_HRV.html" class="LVGMC_karte">
+  <section class="Blitzortung">
+    <iframe src="https://map.blitzortung.org/index.php?
+    interactive=1
+    &NavigationControl=1
+    &FullScreenControl=1
+    &Cookies=0
+    &InfoDiv=1
+    &MenuButtonDiv=1
+    &ScaleControl=1
+    &LinksCheckboxChecked=0
+    &LinksRangeValue=10
+    &MapStyle=2
+    &MapStyleRangeValue=1
+    &LightningRangeValue=23
+    &CourseRangeValue=10
+    &CourseCheckboxChecked=0
+    &CountingRangeValue=1
+    &CountingCheckboxChecked=1
+    &CirclesRangeValue=2
+    &CirclesCheckboxChecked=1
+    &SpeedRangeValue=2
+    &SpeedCheckboxChecked=1
+    &DayNightRangeValue=8
+    &DayNightCheckboxChecked=1
+    &AudioRangeValue=10
+    &AudioCheckboxChecked=1
+    &Advertisment=0#6.5/56.87/24.60" width="100%" height="750">
+    </iframe>
   </section>
+
+
 
 
 

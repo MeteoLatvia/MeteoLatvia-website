@@ -22,79 +22,104 @@
         <ul>
           <li><a href="index.html">MĀJAS</a></li>
           <li><a href="MeteoPar.html">PAR</a></li>
-          <li><a href="MeteoNoverojumuKarte_temperatura.html">NOVĒROJUMU KARTE</a></li>
-          <li><a href="MeteoSatelits_HRV.html">SATELĪTKARTE</a></li>
-          <li><a href="MeteoSalidzinajums.html">SALĪDZINĀJUMI</a></li>
+          <li>
+            <a href="">NOVĒROJUMU DATI</a>
+            <ul class="sub-menu">
+              <li><a href="MeteoNoverojumuKarte_temperatura.html">Novērojumu karte</a></li>
+              <li><a href="MeteoSatelits_HRV.html">Satelītattēli</a></li>
+              <li><a href="MeteoRadars.html">Nokrišņu radars</a></li>
+              <li><a href="MeteoZibenosana.html">Zibeņošana</a></li>
+            </ul>
+          </li>
+          <li><a href="MeteoNegaisi.html">NEGAISU PROGNOZE</a></li>
+          <li><a href="https://failiem.lv/contact@meteolatvia.com" target="_blank">GALERIJA</a></li>
         </ul>
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
 
+    <script>function showMenu() {
+        document.getElementById("navLinks").style.right = "0";
+      }
+
+      function hideMenu() {
+        document.getElementById("navLinks").style.right = "-200px";
+      }
+    </script>
+
+
+
     <div class="text-box">
       <h1>Meteo Latvia</h1>
       <p>Hidrometeoroloģiskā informācija</p>
-      <a href="https://youtu.be/pfg8e0bWd7M" target="_blank" class="hero-btn">Uzzini precīzas laikas prognozes</a>
+      <a href="https://youtu.be/pfg8e0bWd7M" target="_blank" class="hero-btn">Par MeteoLatvia</a>
     </div>
   </section>
 
   <section class="par">
-    <h1>Par mājaslapu</h1>
-    <p>Mājaslapā iespējams aplūkot</p>
-
-    <div class="row">
-      <div class="info-col">
-        <h3>Meteoroloģiskās kartes</h3>
-        <ul>
-          <li>Novērojumu stacijas</li>
-          <li>Meteoroloģiskais radars</li>
-          <li>Meteoroloģiskais satelīts</li>
-          <li>Zibens izlādes</li>
-          <li>Sinoptiskās prognozes</li>
-        </ul>
-      </div>
-      <div class="info-col">
-        <h3>Blogs</h3>
-        <p>Martina Bergšteina veidoti blogi, kuros apskatīti interesanti meteorloģiskie notikumi,
-          laika prognozes, kā arī citi ar meteoroloģiju saistīti temati.
-        </p>
-      </div>
-      <div class="info-col">
-        <h3>Galerija</h3>
-        <p>Martina Bergšteina personālā galerija ar dabas, meteoroloģisko parādību, kā arī astronomijas
-          fotogrāfijām, pilnā kvalitātē, bez maksas.
-        </p>
-      </div>
-    </div>
+    <h1>Pašreizējā situācija</h1>
+    <p>Novērojumu staciju dati no LVĢMC</p>
+    <embed type="text/html" src="LVGMC_kartes/karte_gaisatemperatura.html" class="LVGMC_karte2">
+      <a href="MeteoNoverojumuKarte_temperatura.html" target="_self" class="LVGMC_karte_poga">Pilnā versija</a>
   </section>
 
   </div>
   </section>
 
   <section class="contact">
-    <h1>Populārākās sadaļas</h1>
-    <p>Mājslapas apmeklētāju biežāk apmeklētās mājaslapas sadaļas.</p>
-
-    <div class="row">
-      <div class="contact-col">
-        <img src="images/Sakumlapa.png">
-        <div class="layer">
-          <h3>Sākumlapa</h3>
-        </div>
-      </div>
-      <div class="contact-col">
-        <img src="https://fv9-5.failiem.lv/down.php?i=s362aha64&view">
-        <div class="layer">
-          <h3>Novērojumu karte</h3>
-        </div>
-      </div>
-      <div class="contact-col">
-        <img src="https://fv9-4.failiem.lv/down.php?i=4aus75s86&view">
-        <div class="layer">
-          <h3>Satelītkarte</h3>
-        </div>
-      </div>
-    </div>
+    <h1>Nokrišņu radars</h1>
+    <p>Latvijas un Pasaules nokrišņu radaru dati</p>
+    <iframe 
+    width="100%" 
+    height="600px" 
+    src="https://embed.windy.com/embed2.html?lat=56.819&lon=24.686&detailLat=56.786&detailLon=24.642&width=1280&height=720&zoom=7&level=surface&overlay=radar&product=radar&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1"
+    frameborder="0">
+  </iframe>
+      <a href="MeteoRadars.html" target="_self" class="LVGMC_karte_poga">Pilnā versija</a>
   </section>
+
+
+  <section class="contact">
+    <h1>Jaunākais satelītattēls</h1>
+    <p>Meteoroloģiskā satelīdati no EUMETSAT</p>
+    <embed type="text/html" src="EUMETSAT/EUMETSAT_HRV.html" class="LVGMC_karte2">
+      <a href="MeteoSatelits_HRV.html" target="_self" class="LVGMC_karte_poga">Pilnā versija</a>
+  </section>
+
+  <section class="contact">
+    <h1>Zibeņošana tiešsaistē</h1>
+    <p>Zibens izlāžu dati tiešsaistes režīmā no Blitzortung</p>
+    <iframe src="https://map.blitzortung.org/index.php?
+    interactive=1
+    &NavigationControl=1
+    &FullScreenControl=1
+    &Cookies=0
+    &InfoDiv=1
+    &MenuButtonDiv=1
+    &ScaleControl=1
+    &LinksCheckboxChecked=0
+    &LinksRangeValue=10
+    &MapStyle=2
+    &MapStyleRangeValue=1
+    &LightningRangeValue=23
+    &CourseRangeValue=10
+    &CourseCheckboxChecked=0
+    &CountingRangeValue=1
+    &CountingCheckboxChecked=1
+    &CirclesRangeValue=2
+    &CirclesCheckboxChecked=1
+    &SpeedRangeValue=2
+    &SpeedCheckboxChecked=1
+    &DayNightRangeValue=8
+    &DayNightCheckboxChecked=1
+    &AudioRangeValue=10
+    &AudioCheckboxChecked=1
+    &Advertisment=0#6.5/56.87/24.60" width="100%" height="750">
+    </iframe>
+      <a href="MeteoZibenosana.html" target="_self" class="LVGMC_karte_poga">Pilnā versija</a>
+  </section>
+
+
 
 
   <section class="karte">
@@ -159,7 +184,7 @@
   </section>
 
   <section class="footer">
-    <h4>MeteoLatvia</h4>
+    <h4>Martins Bergšteins - Meteo Latvia</h4>
     <p></p>
     <div class="icons">
       <a href="https://twitter.com/MeteoLatvia">

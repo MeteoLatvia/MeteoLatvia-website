@@ -57,6 +57,21 @@ nav img {
     width: 100%;
 }
 
+/*Dropdowns*/
+.nav-links ul.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(0, 40, 255);
+    padding: 0;
+    border-radius: 10px;
+  }
+  
+  .nav-links li:hover ul.sub-menu {
+    display: block;
+  }
+
 .text-box {
     width: 90%;
     color: white;
@@ -202,7 +217,7 @@ h3 {
 
 .contact-col img {
     width: 100%;
-    height: 100%;
+    
     display: block;
 }
 
@@ -305,6 +320,27 @@ h3 {
     color: rgb(0, 40, 255)
 }
 
+.LVGMC_karte_poga {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 40, 255);
+    border: 1px solid rgb(0, 40, 255);
+    border-radius: 5px;
+    padding: 12px 34px;
+    margin-top: 25px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.LVGMC_karte_poga:hover {
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(0, 40, 255);
+    color: #ffffff;
+    transition: 0.5s;
+}
+
 @media(max-width: 700px) {
     .reviews-col img {
         margin-left: 0px;
@@ -316,16 +352,26 @@ h3 {
     width: 100%;
     text-align: center;
     padding: 30px 0;
+    background-color: rgb(0, 40, 255);
 }
 
 .footer h4 {
     margin-bottom: 25px;
     margin-top: 20px;
     font-weight: 600;
+    color: white;
+}
+
+.fa-copyright{
+    color: rgb(200, 200, 200);
+}
+
+.footer p{
+    color: rgb(200, 200, 200);
 }
 
 .icons .fa {
-    color: rgb(0, 40, 255);
+    color: rgb(255, 255, 255);
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
@@ -406,7 +452,7 @@ h3 {
 .sub-header-karte {
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/27.04.2023.0708.PNG);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://fv9-5.failiem.lv/down.php?i=5mp24rb9w&view);
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -415,8 +461,16 @@ h3 {
 
 .LVGMC_karte {
     width: 100%;
-    height: 800px;
+    height: 600px;
     display: block;
+}
+
+.LVGMC_karte2 {
+    width: 90%;
+    height: 600px;
+    display: block;
+    margin: 0 auto; /* Add this line */
+    border-radius: 10px;
 }
 
 .LVGMC_noverojumu_karte h1 {
@@ -454,6 +508,7 @@ h3 {
 }
 
 .color-legend-temperature {
+    position: relative;
     width: 80%;
     height: 20px;
     margin: 20px auto;
@@ -462,6 +517,24 @@ h3 {
     border-width: 50px;
     border-color: rgb(67, 67, 67);
     box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+}
+
+.legend-text-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.legend-text {
+    font-size: 12px;
+    color: #333;
+}
+
+.legend-text:first-child {
+    margin-left: -50%;
+}
+
+.legend-text:last-child {
+    margin-right: -50%;
 }
 
 
@@ -526,3 +599,173 @@ tr:hover {
     text-align: center;
     color: white;
 }
+
+/*MeteoNegaisi*/
+.sub-header-negaisi {
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://fv9-4.failiem.lv/down.php?i=bqradv8eu&view);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.Blitzortung {
+    text-align: center;
+}
+
+.Blitzortung h1 {
+    text-align: center;
+}
+
+.MeteoLatvia_StormMap h1 {
+    text-align: center;
+}
+
+.MeteoLatvia_StormMap img {
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 80%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.active,
+.collapsible:hover {
+    background-color: rgb(0, 40, 255);
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.thunderstorm-outlook {
+    padding: 0 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thunderstorm-outlook p{
+    font-family: 'Courier Prime', monospace; 
+}
+
+.thunderstorm-outlook-description {
+    padding: 0 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thunderstorm-outlook-description p{
+    font-family: 'Courier Prime', monospace; 
+}
+
+/*MeteoRadars*/
+.sub-header-radars {
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://fv9-5.failiem.lv/down.php?i=9e4d5seke&view);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+/*MeteoChangelog*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .info-col-changelog {
+    width: 100%;
+    background-color: rgb(226, 230, 253);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+  
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.info-col-changelog:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+.info-col-changelog ul {
+    list-style-type: none;
+  }
+
+.info-col-changelog li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 20px;
+  }
+
+
+.info-col-changelog li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+}
+
+
+
+
+
+
+
+
+
+
