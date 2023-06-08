@@ -4,7 +4,6 @@
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-
     <base target="_top">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,22 +11,19 @@
     <title>LVĢMC_vēja_virziens</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet"></script>
-    <script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
-    <script>
-        L.simpleMapScreenshoter().addTo(map)
-    </script>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
+    <script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
 
     <style>
@@ -54,8 +50,16 @@
             height: 28px;
             border-radius: 5px;
             border-color: black;
-            text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff;
-            border-width: 1px;
+            text-shadow:
+                -0.6px -0.6px 0 #ffffff,
+                0 -0.6px 0 #ffffff,
+                0.6px -0.6px 0 #ffffff,
+                0.6px 0 0 #ffffff,
+                0.6px 0.6px 0 #ffffff,
+                0 0.6px 0 #ffffff,
+                -0.6px 0.6px 0 #ffffff,
+                -0.6px 0 0 #ffffff;
+            border-width: 0.5px;
             border-style: solid;
             text-align: center;
         }
@@ -101,26 +105,64 @@
 
 
 
-        L.mapbox.accessToken = 'pk.eyJ1IjoibWV0ZW9sYXR2aWEiLCJhIjoiY2xjcWF3ajRkMDQ0NDNucDE4aTdkZ3h2NSJ9.L0yigObs_66n45KR3oLfUQ';
-        var map = L.map('map').setView([56.85, 24.55], 7);
-
-        // Add tiles from the Mapbox Static Tiles API
-        // (https://docs.mapbox.com/api/maps/#static-tiles)
-        // Tiles are 512x512 pixels and are offset by 1 zoom level
-        L.tileLayer(
-            'https://api.mapbox.com/styles/v1/mapbox/dark-v11/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
-            tileSize: 512,
-            zoomOffset: -1,
-            attribution: '© <a href="https://www.mapbox.com/contribute/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        //load basemap
+        var map = L.map('map').setView([56.74, 24.65], 7);
+        var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        const baseballIcon = L.icon({
-            iconUrl: 'baseball-marker.png',
-            iconSize: [32, 37],
-            iconAnchor: [16, 37],
-            popupAnchor: [0, -28]
+        //load other basemaps
+        var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            subdomains: 'abcd',
+            minZoom: 0,
+            maxZoom: 18,
+            ext: 'png'
         });
 
+        var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20,
+            ext: 'png'
+        });
+
+        var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20,
+            ext: 'png'
+        });
+
+        var MeteoLatviaMapboxDark = L.tileLayer('https://api.mapbox.com/styles/v1/meteolatvia/clgag3w0g002c01pegs0qihfg/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWV0ZW9sYXR2aWEiLCJhIjoiY2xjcWF3ajRkMDQ0NDNucDE4aTdkZ3h2NSJ9.L0yigObs_66n45KR3oLfUQ', {
+            subdomains: 'abcd',
+            maxZoom: 20,
+            attribution: '© <a href="https://www.mapbox.com/contribute/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        });
+
+
+        //add layer control
+        var baseMaps = {
+            'OSM': tiles,
+            'Reljefs': Stamen_Terrain,
+            'Gaiša karte': CartoDB_Positron,
+            'Tumša karte': MeteoLatviaMapboxDark
+        }
+
+        L.control.layers(baseMaps).addTo(map);
+
+
+        //fulscreen
+        L.control.fullscreen().addTo(map);
+
+
+        //add screenshotter
+        L.simpleMapScreenshoter().addTo(map)
+
+
+        //add geocoding
+        L.Control.geocoder().addTo(map);
 
         //izveidot geoJson
 
