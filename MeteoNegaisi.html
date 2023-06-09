@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeteoLatvia</title>
+  <link rel="stylesheet" href="MeteoStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d13555ebbc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .centered-iframe {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .rounded-iframe {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script language="JavaScript">
+    <!--hide-->
+    var password;
+    var pass1 = "meteolatviaNEGAISI";
+
+    password = prompt('Lūdzu ievadiet paroli lai piekļūtu šai sadaļai', '');
+
+    if (password === pass1) {
+      alert('Parole pareiza! Nospiediet OK lai ienāktu');
+    } else {
+      window.location = "https://meteolatvia.lv/";
+    }
+  </script>
+
+
+
+
+  </script>
+  <section class="sub-header-negaisi">
+    <nav>
+      <a href="MeteoHome.html"><img src="https://fv9-5.failiem.lv/down.php?i=c35dyk4ce&view"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">MĀJAS</a></li>
+          <li><a href="MeteoPar.html">PAR</a></li>
+          <li>
+            <a href="MeteoNoverojumuKarte_temperatura.html">NOVĒROJUMU DATI</a>
+            <ul class="sub-menu">
+              <li><a href="MeteoNoverojumuKarte_temperatura.html">Novērojumu karte</a></li>
+              <li><a href="MeteoSatelits_HRV.html">Satelītattēli</a></li>
+              <li><a href="MeteoRadars.html">Nokrišņu radars</a></li>
+              <li><a href="MeteoZibenosana.html">Zibeņošana</a></li>
+            </ul>
+          </li>
+          <li><a href="MeteoNegaisi.html">NEGAISU PROGNOZE</a></li>
+          <li><a href="https://failiem.lv/contact@meteolatvia.com" target="_blank">GALERIJA</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Negaisu prognoze</h1>
+  </section>
+
+  <section class="MeteoLatvia_StormMap">
+    <img src="https://fv1-7.failiem.lv/down.php?i=hfjbmba5e&view">
+
+    <button class="collapsible">Prognozes izklāsts</button>
+    <div class="thunderstorm-outlook">
+      <p>Bīstamu negaisu prognoze<br>
+        Derīga: no 10.05.2023. 21:00 līdz 11.05.2023. 21:00<br>
+        Izplatīta: 10.05.2023. 20:35<br><br><br>
+
+
+        SITUĀCIJAS APRAKSTS<br><br><br>
+        Virs mūsu reģiona darbojas pazemināta spiediena apgabals, kas mūsu reģionā no dienvidaustrumiem ienes ļoti
+        karstas un ļoti mitras gaisa masas.
+        Pēdējo dienu laikā daudzviet gaisa temperatūra jau pakāpusies virs +30°C...+33°C atzīmes, kā arī realatīvais
+        gaisa mitrums ir ļoti augsts.<br><br><br>
+
+
+        DISKUSIJA<br><br><br>
+        Iepriekš minētais pazemināta spiediena apgabals no Melnās jūras reģiona, pie mums ienesis ļoti karstu un mitru
+        gaisa masu. Theta-E vertības 10.maija dienas laikā
+        tiek prognozētas ap 55-60, kas norāda uz ekstremālu gaisa masas mitrumu. Jau agrās rīta stundās CAPE vērtības
+        būs ap 1000-1500 J/kg, taču dienas laikā tās strauji
+        palielināsies, un ap 12:00-15:00, centrālajos un austrumu rajonos būs ap 2500-3000 J/kg. Īpaši interesanti
+        prognozēs izskatās laika posms ap 17:00-18:00, kad
+        Zemgales un Sēlijas apkārtnē būs neliels reģions ar CAPE vērtībām līdz 4000 J/kg. Konvektīvā inicializāija tiek
+        prognozēta ap 13:00-14:00, kad frontāls veidojums
+        virzīsies no dienvidrietumiem uz ziemeļaustrumiem. Negaisu cikla sākumā, tie strauji pāraugs ļoti spēcīgās
+        negaisu šūnās. Papildus tam - wind shear vērtības būs ap 15-20 m/s, kas
+        veidos ideālus apstākļus negaisa mākoņu rotācijai. Tas dod iespēju, ka negaisi strauji pāraugs superšūnas tipa
+        negaisos. Šādā gadījumā tas īpaši palielina virpuļviesuļa
+        un milzu krusas risku, kas šajā gadījumā būs reģionā no Šauļiem un Paņevežas cauri Bauskai uz Vidzemes
+        dienvdiem. Vēlāk pēcpusdienā un pievakarē (ap 15:00-18:00), negaisi
+        sāks aktīvi organizēties grupās un linēarās sistēmās. To virzības ceļā uz ziemeļaustrumiem, būs plašs apgabals
+        ar īpaši augstām CAPE vērtībām ap 2500-3000 J/kg, kas palīdzēs
+        negaisiem vēl vairāk organizēties. Vēlāk vakarā (ap 20:00-23:00) negaisi jau būs izveidojuši milzu konvektīvo
+        sistēmu un strauji virzīsies uz ziemeļaustrumiem. Šajā brīdī
+        pazudīs virpuļviesuļa risks, taču palielināsies risks uz vētrainām vēja brāzmām un ļoti spēcīgām lietusgāzēm, kā
+        arī ļoti aktīvu zibeņošanu.
+      </p>
+    </div>
+
+    <button class="collapsible">Skaidrojumi</button>
+    <div class="thunderstorm-outlook-description">
+      <img src="https://fv1-9.failiem.lv/down.php?i=zr3gqz6w2&view">
+
+    </div>
+
+    <section>
+      <div class="centered-iframe">
+        <div class="rounded-iframe">
+          <iframe width="100%" height="500px" src="https://www.youtube-nocookie.com/embed/ro5NO03XU3g"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+  </section>
+
+
+
+  <section class="footer">
+    <h4>Martins Bergšteins - Meteo Latvia</h4>
+    <p></p>
+    <div class="icons">
+      <a href="https://twitter.com/MeteoLatvia">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="https://www.facebook.com/MetLatvia">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/meteo_latvia15/">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@meteolatvia">
+        <i class="fa fa-youtube"></i>
+      </a>
+    </div>
+    <p><i class="fa fa-copyright"></i>MeteoLatvia 2023 <br>V5</p>
+  </section>
+
+
+
+
+  <script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+
+  </script>
+
+</body>
+
+</html>
