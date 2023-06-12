@@ -11,10 +11,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d13555ebbc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .centered-iframe {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .rounded-iframe {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
 <body>
-  <section class="sub-header-karte">
+  <section class="sub-header-negaisi">
     <nav>
       <a href="MeteoHome.html"><img src="https://fv9-5.failiem.lv/down.php?i=c35dyk4ce&view"></a>
       <div class="nav-links" id="navLinks">
@@ -23,7 +39,7 @@
           <li><a href="index.html">MĀJAS</a></li>
           <li><a href="MeteoPar.html">PAR</a></li>
           <li>
-            <a href="">NOVĒROJUMU DATI</a>
+            <a href="MeteoNoverojumuKarte_temperatura.html">NOVĒROJUMU DATI</a>
             <ul class="sub-menu">
               <li><a href="MeteoNoverojumuKarte_temperatura.html">Novērojumu karte</a></li>
               <li><a href="MeteoSatelits_HRV.html">Satelītattēli</a></li>
@@ -31,38 +47,46 @@
               <li><a href="MeteoZibenosana.html">Zibeņošana</a></li>
             </ul>
           </li>
-          <li>
-            <a href="">PROGNOZES</a>
-            <ul class="sub-menu">
-              <li><a href="MeteoPrognoze.html">Laika prognoze</a></li>
-              <li><a href="MeteoNegaisi.html">Negaisu prognoze</a></li>
-            </ul>
-          </li>
+          <li><a href="MeteoNegaisi.html">NEGAISU PROGNOZE</a></li>
           <li><a href="https://failiem.lv/contact@meteolatvia.com" target="_blank">GALERIJA</a></li>
         </ul>
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-    <h1>Novērojumu karte</h1>
+    <h1>Negaisu prognoze</h1>
   </section>
 
-  
+  <main id="site-blog">
 
-  <section class="LVGMC_noverojumu_karte">
-    <h1>Vēja ātrums</h1>
-    <ul>
-      <li><a href="MeteoNoverojumuKarte_temperatura.html">Gaisa Temeratūra</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejavirziens.html">Vēja virziens</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejaatrums.html">Vēja ātrums</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejabrazmas.html">Vēja brāzmas</a></li>
-      <li><a href="MeteoNoverojumuKarte_relativaismitrums.html">Relatīvais mitrums</a></li>
-      <li><a href="MeteoNoverojumuKarte_atmosferasspiediens.html">Atmosfēras spiediens</a></li>
-      <li><a href="MeteoNoverojumuKarte_nokrisnudaudzums.html">Nokrišņu daudzums</a></li>
-      <li><a href="MeteoNoverojumuKarte_redzamiba.html">Redzamība</a></li>
-      <li><a href="MeteoNoverojumuKarte_sniegasegasbiezums.html">Sniega segas biezums</a></li>
-    </ul>
-    <embed type="text/html" src="LVGMC_kartes/karte_vejaatrums.html" class="LVGMC_karte">
-  </section>
+
+    <section id="posts">
+        <div class="posts-container">
+            <div class="post-grid">
+                <div class="grid-item">
+                    <article class="article">
+                        <div class="card">
+                            <div class="overflow-img">
+                                <a href="#">
+                                    <img src="https://fv9-6.failiem.lv/down.php?i=8c8rk64ef&view" class="img-fluid">
+                                </img>
+                                </a>
+                            </div>
+                            <div class="card-body text-center px-1">
+                                <a href="#" class="text-title display-1 text-dark">
+                                    Testa ieraksts (07.06.2023. 0:00 - 08.06.2023. 0:00)
+                                </a>
+                                <p class="secondary-title text-secondary display-3">
+                                    <span><i class="fa-solid fa-clock text-primary"></i>07.06.2023. 16:27</span>
+                                    <span><i class="fa-solid fa-comment text-primary"></i>12</span>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
 
 

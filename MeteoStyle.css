@@ -760,6 +760,96 @@ h3 {
   left: 0;
 }
 
+/*MeteoChangelog*/
+.sub-header-radars {
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://fv9-5.failiem.lv/down.php?i=9e4d5seke&view);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.img-fluid{
+    width: 100%;
+    
+}
+
+/*MeteoPrognoze*/
+.collapsible-2 {
+    background-color: rgb(0, 40, 255);
+    color: white;
+    cursor: pointer;
+    padding: 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.active,
+.collapsible-2:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+.collapsible-2:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.thunderstorm-outlook-2 {
+    padding: 0 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thunderstorm-outlook-2 p{
+    font-family: 'Courier Prime', monospace; 
+}
+
+.thunderstorm-outlook-2-description {
+    padding: 0 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thunderstorm-outlook-2-description p{
+    font-family: 'Courier Prime', monospace; 
+}
+
+
+
+
+
+
 
 
 

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <section class="sub-header-karte">
+  <section class="header">
     <nav>
       <a href="MeteoHome.html"><img src="https://fv9-5.failiem.lv/down.php?i=c35dyk4ce&view"></a>
       <div class="nav-links" id="navLinks">
@@ -43,28 +43,55 @@
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-    <h1>Novērojumu karte</h1>
+    <script>function showMenu() {
+        document.getElementById("navLinks").style.right = "0";
+      }
+
+      function hideMenu() {
+        document.getElementById("navLinks").style.right = "-200px";
+      }
+    </script>
+
+
+
+    <div class="text-box">
+      <h1>Meteo Latvia</h1>
+      <p>Hidrometeoroloģiskā informācija</p>
+      <a href="https://youtu.be/pfg8e0bWd7M" target="_blank" class="hero-btn">Par MeteoLatvia</a>
+    </div>
   </section>
 
+  <section class="par">
+    <h1>Par mājaslapu</h1>
+    <p>Mājaslapā iespējams aplūkot</p>
   
-
-  <section class="LVGMC_noverojumu_karte">
-    <h1>Vēja ātrums</h1>
-    <ul>
-      <li><a href="MeteoNoverojumuKarte_temperatura.html">Gaisa Temeratūra</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejavirziens.html">Vēja virziens</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejaatrums.html">Vēja ātrums</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejabrazmas.html">Vēja brāzmas</a></li>
-      <li><a href="MeteoNoverojumuKarte_relativaismitrums.html">Relatīvais mitrums</a></li>
-      <li><a href="MeteoNoverojumuKarte_atmosferasspiediens.html">Atmosfēras spiediens</a></li>
-      <li><a href="MeteoNoverojumuKarte_nokrisnudaudzums.html">Nokrišņu daudzums</a></li>
-      <li><a href="MeteoNoverojumuKarte_redzamiba.html">Redzamība</a></li>
-      <li><a href="MeteoNoverojumuKarte_sniegasegasbiezums.html">Sniega segas biezums</a></li>
-    </ul>
-    <embed type="text/html" src="LVGMC_kartes/karte_vejaatrums.html" class="LVGMC_karte">
+    <div class="row">
+      <div class="info-col-changelog">
+        <h3>Meteoroloģiskās kartes</h3>
+        <p>Testam</p>
+        <ul>
+          <li>Novērojumu stacijas</li>
+          <li>Meteoroloģiskais radars</li>
+          <li>Meteoroloģiskais satelīts</li>
+          <li>Zibens izlādes</li>
+          <li>Sinoptiskās prognozes</li>
+        </ul>
+      </div>
+      <div class="info-col-changelog">
+        <h3>Blogs</h3>
+        <p>Martina Bergšteina veidoti blogi, kuros apskatīti interesanti meteorloģiskie notikumi,
+          laika prognozes, kā arī citi ar meteoroloģiju saistīti temati.
+        </p>
+      </div>
+      <div class="info-col-changelog">
+        <h3>Galerija</h3>
+        <p>Martina Bergšteina personālā galerija ar dabas, meteoroloģisko parādību, kā arī astronomijas
+          fotogrāfijām, pilnā kvalitātē, bez maksas.
+        </p>
+      </div>
+    </div>
   </section>
-
-
+  
 
   <section class="footer">
     <h4>Martins Bergšteins - Meteo Latvia</h4>

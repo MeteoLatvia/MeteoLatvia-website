@@ -11,10 +11,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d13555ebbc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .centered-iframe {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .rounded-iframe {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
 <body>
-  <section class="sub-header-karte">
+
+
+
+
+  </script>
+  <section class="sub-header-negaisi">
     <nav>
       <a href="MeteoHome.html"><img src="https://fv9-5.failiem.lv/down.php?i=c35dyk4ce&view"></a>
       <div class="nav-links" id="navLinks">
@@ -43,25 +64,49 @@
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-    <h1>Novērojumu karte</h1>
+    <h1>Laika prognoze</h1>
   </section>
 
-  
+  <p>Prognoze atjaunota: 12.06.2023. 18:00<br>
+  Prognoze derīga: 12.06.2023. 18:00 - 13.06.2023. 18:00</p>
 
-  <section class="LVGMC_noverojumu_karte">
-    <h1>Vēja ātrums</h1>
-    <ul>
-      <li><a href="MeteoNoverojumuKarte_temperatura.html">Gaisa Temeratūra</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejavirziens.html">Vēja virziens</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejaatrums.html">Vēja ātrums</a></li>
-      <li><a href="MeteoNoverojumuKarte_vejabrazmas.html">Vēja brāzmas</a></li>
-      <li><a href="MeteoNoverojumuKarte_relativaismitrums.html">Relatīvais mitrums</a></li>
-      <li><a href="MeteoNoverojumuKarte_atmosferasspiediens.html">Atmosfēras spiediens</a></li>
-      <li><a href="MeteoNoverojumuKarte_nokrisnudaudzums.html">Nokrišņu daudzums</a></li>
-      <li><a href="MeteoNoverojumuKarte_redzamiba.html">Redzamība</a></li>
-      <li><a href="MeteoNoverojumuKarte_sniegasegasbiezums.html">Sniega segas biezums</a></li>
-    </ul>
-    <embed type="text/html" src="LVGMC_kartes/karte_vejaatrums.html" class="LVGMC_karte">
+  <section class="MeteoLatvia_StormMap">
+    <button class="collapsible">Nakts</button>
+    <div class="thunderstorm-outlook-2">
+      <h1>Nakts</h1>
+      <img src="https://fv9-7.failiem.lv/down.php?i=s6dwhd9r9&view">
+      <p>Nakts:<br>
+        🌗Pārsvarā skaidrs, tikai dienvidos vairāk mākoņu.<br>
+        🌡Gaisa temperatūra ap +4°C...+9°C, piekrastē ne vēsāks par +10°C...+12°C<br>
+        💨Pūtīs lēns austrumu puses vējš ar ātrumu 1-2 m/s.</p>
+    </div>
+
+    <button class="collapsible">Diena</button>
+    <div class="thunderstorm-outlook-2">
+      <h1>Diena</h1>
+      <img src="https://fv9-4.failiem.lv/down.php?i=dfe9udbey&view">
+      <p>Diena:<br>
+        ☀ Dienas pirmajā pusē laiks būs skaidrs un saulains, bet dienas laikā no dienvidiem mākoņu daudzums palielināsies, taču nokrišņi nav gaidāmi.<br>
+        🌡Gaisa temperatūra ap +23°C...+26°C, piekrastē vēsāks - ap +19°C...+20°C<br>
+        💨 Lēns līdz mēreni stiprs ziemeļu puses vējš ar ātrumu 2-5 m/s, piekrastes rajonos brāzmas līdz 8-10 m/s.</p>
+    </div>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
   </section>
 
 
