@@ -67,60 +67,78 @@
     <h1>Laika prognoze</h1>
   </section>
 
-  <p>Prognoze atjaunota: 16.06.2023. 18:00<br>
-  Prognoze derīga: 16.06.2023. 18:00 - 17.06.2023. 18:00</p>
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 400px;
+      /* Adjust the height as needed */
+    }
+
+    .image-container p {
+      width: 100%;
+      max-width: 500px;
+      /* Adjust the width as needed */
+    }
+  </style>
+
+  <p>Prognoze atjaunota: 12.06.2023. 18:00<br>
+    Prognoze derīga: 12.06.2023. 18:00 - 13.06.2023. 18:00</p>
 
   <section class="MeteoLatvia_StormMap">
-    <button class="collapsible">Nakts</button>
-    <div class="thunderstorm-outlook-2">
-      <h1>Līgo diena</h1>
-      <img src="https://fv9-7.failiem.lv/down.php?i=sm29gxcr6&view">
-      <p>Diena:<br>
-🌿☀️Diena būs mākoņaina, un tikai brīžiem uzspīdēs saule, taču nokrišņi nav gaidāmi un lielākajā valsts daļā diena būs patīkami silta, vasarīga.<br>
-🌡Gaisa temperatūra paaugstināsies līdz +24°C...+26°C, vienīgi piekrastē par pāris grādiem vēsāks.<br>
-💨 Pūtīs lēns vējš ar ātrumu 2-5 m/s.
-
+    <div class="image-container">
+      <div>
+        <h1>Nakts</h1>
+        <img src="https://fv9-7.failiem.lv/down.php?i=s6dwhd9r9&view">
+        <p>Nakts:<br>
+          🌗Pārsvarā skaidrs, tikai dienvidos vairāk mākoņu.<br>
+          🌡Gaisa temperatūra ap +4°C...+9°C, piekrastē ne vēsāks par +10°C...+12°C<br>
+          💨Pūtīs lēns austrumu puses vējš ar ātrumu 1-2 m/s.</p>
+      </div>
+      <div>
+        <h1>Diena</h1>
+        <img src="https://fv9-4.failiem.lv/down.php?i=dfe9udbey&view">
+        <p>Diena:<br>
+          ☀ Dienas pirmajā pusē laiks būs skaidrs un saulains, bet dienas laikā no dienvidiem mākoņu daudzums
+          palielināsies, taču nokrišņi nav gaidāmi.<br>
+          🌡Gaisa temperatūra ap +23°C...+26°C, piekrastē vēsāks - ap +19°C...+20°C<br>
+          💨 Lēns līdz mēreni stiprs ziemeļu puses vējš ar ātrumu 2-5 m/s, piekrastes rajonos brāzmas līdz 8-10 m/s.</p>
+      </div>
     </div>
+  </section>
+
+  <div id="ww_34c01a5ce0c94" v='1.3' loc='auto'
+    a='{"t":"responsive","lang":"lv","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"7"}'>
+    More forecasts: <a href="https://oneweather.org/sydney/30_days/" id="ww_34c01a5ce0c94_u" target="_blank">30 days
+      Sydney weather</a></div>
+  <script async src="https://app1.weatherwidget.org/js/?id=ww_34c01a5ce0c94"></script>
 
 
-      <section class="MeteoLatvia_StormMap">
-    <button class="collapsible">Nakts</button>
-    <div class="thunderstorm-outlook-2">
-      <h1>Jāņu nakts</h1>
-      <img src="https://fv9-6.failiem.lv/down.php?i=t4ujsbree&view">
-      <p>Nakts:<br>
-🔥🌒Mainīgs mākoņu daudzums, arī naktī nokrišņi nav gaidāmi.<br>
-🌡Gaisa temperatūra būs robežās ap +13°C...+16°C, vietām austrumos ne vēsāks par +18°C.<br>
-💨 Pūtīs lēns vējš ar ātrumu 1-4 m/s.
 
-    </div>
 
-    <button class="collapsible">Diena</button>
-    <div class="thunderstorm-outlook-2">
-      <h1>Jāņu diena</h1>
-      <img src="https://fv9-4.failiem.lv/down.php?i=p2pm4pn6f&view">
-      <p>Diena:<br>
-☀️Mainīgs mākoņu daudzums, vietām nedaudz uzlīs, taču uzspīdēs arī saule.<br>
-🌡Gaisa temperatūra būs robežās ap +22°C...+26°C, vienīgi piekrastē vēsāks - ap +18°C...+20°C<br>
-💨 Pastiprināsies ziemeļu puses vējš, kas pēcpusdienā jau būs ar ātrumu 5-7 m/s, brāzmas līdz 10 m/s.
-    </div>
 
-    <script>
-      var coll = document.getElementsByClassName("collapsible");
-      var i;
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
-      for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-          } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-          }
-        });
-      }
-    </script>
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
   </section>
 
 
